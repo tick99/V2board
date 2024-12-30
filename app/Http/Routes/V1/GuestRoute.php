@@ -9,7 +9,7 @@ class GuestRoute
     {
         $router->group([
             'prefix' => 'guest', 
-            'middleware' => ['api'] 
+            'middleware' => ['api','cors'] 
         ], function ($router) {
             // Telegram
             $router->post('/telegram/webhook', 'V1\\Guest\\TelegramController@webhook');

@@ -18,7 +18,8 @@ class GuestRoute
             // Comm
             $router->get ('/comm/config', 'V1\\Guest\\CommController@config');
             // Plan
-            $router->get('/plan/fetch', 'V1\\Guest\\PlanController@fetch'); 
+            $router->get('/plan/fetch', 'V1\\Guest\\PlanController@fetch')
+                ->withoutMiddleware(['auth', 'guest']); 
         });
     }
 }
